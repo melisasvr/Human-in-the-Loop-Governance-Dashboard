@@ -1,0 +1,206 @@
+[
+  {
+    "id": "DEC-1001",
+    "title": "Personal loan application",
+    "category": "Credit",
+    "ai_output": "Decline application for a $18,500 personal loan.",
+    "confidence": 0.71,
+    "risk_level": "high",
+    "context": {
+      "applicant_ref": "APP-48213",
+      "credit_score": 612,
+      "debt_to_income": "43%",
+      "employment_years": 1.5,
+      "top_factors": ["High debt-to-income ratio", "Short credit history", "One missed payment in the last 6 months"],
+      "model": "credit-risk-v3.2"
+    },
+    "submitted_hours_ago": 30
+  },
+  {
+    "id": "DEC-1002",
+    "title": "Resume screening: Senior Data Analyst",
+    "category": "Hiring",
+    "ai_output": "Auto-reject candidate: insufficient SQL experience for the role.",
+    "confidence": 0.58,
+    "risk_level": "high",
+    "context": {
+      "candidate_ref": "CAND-9921",
+      "years_experience": 6,
+      "flagged_signal": "SQL appears only in the certifications section, not in job descriptions",
+      "protected_attributes_used": "None (removed before scoring)",
+      "model": "resume-ranker-v1.9"
+    },
+    "submitted_hours_ago": 26
+  },
+  {
+    "id": "DEC-1003",
+    "title": "Emergency department triage",
+    "category": "Healthcare",
+    "ai_output": "Assign triage priority Level 3 (urgent, non-emergency).",
+    "confidence": 0.64,
+    "risk_level": "critical",
+    "context": {
+      "patient_age": 58,
+      "symptoms": ["chest tightness", "shortness of breath on exertion"],
+      "heart_rate": 102,
+      "spo2": "96%",
+      "history": "Hypertension, type 2 diabetes",
+      "model": "triage-assist-v2.0"
+    },
+    "submitted_hours_ago": 2
+  },
+  {
+    "id": "DEC-1004",
+    "title": "Card transaction flagged as fraud",
+    "category": "Fraud",
+    "ai_output": "Block card transaction: $2,940 electronics purchase at a foreign merchant.",
+    "confidence": 0.93,
+    "risk_level": "medium",
+    "context": {
+      "card_ref": "CARD-7731",
+      "merchant_country": "Lithuania",
+      "customer_home_country": "United States",
+      "recent_travel_notice": "None on file",
+      "model": "txn-fraud-v5.4"
+    },
+    "submitted_hours_ago": 5
+  },
+  {
+    "id": "DEC-1005",
+    "title": "Social post removal",
+    "category": "Content moderation",
+    "ai_output": "Remove post for violating the hate speech policy.",
+    "confidence": 0.77,
+    "risk_level": "medium",
+    "context": {
+      "language": "Spanish",
+      "user_reports": 14,
+      "note": "Contains a term that may be reclaimed or quoted in a news context",
+      "author_prior_violations": 0,
+      "model": "mod-classifier-v4.1"
+    },
+    "submitted_hours_ago": 8
+  },
+  {
+    "id": "DEC-1006",
+    "title": "Water damage insurance claim",
+    "category": "Insurance",
+    "ai_output": "Deny claim: damage attributed to a pre-existing condition (policy exclusion 4.2).",
+    "confidence": 0.69,
+    "risk_level": "high",
+    "context": {
+      "claim_ref": "CLM-20418",
+      "claim_amount": "$12,400",
+      "policy_age_years": 3,
+      "adjuster_photos": 11,
+      "model": "claims-triage-v2.7"
+    },
+    "submitted_hours_ago": 48
+  },
+  {
+    "id": "DEC-1007",
+    "title": "Refund request: duplicate billing",
+    "category": "Customer support",
+    "ai_output": "Issue a full refund of $79.00 for a duplicate charge.",
+    "confidence": 0.96,
+    "risk_level": "low",
+    "context": {
+      "customer_tenure_months": 28,
+      "duplicate_charge_verified": true,
+      "previous_refunds_12m": 0,
+      "model": "support-agent-v1.3"
+    },
+    "submitted_hours_ago": 1
+  },
+  {
+    "id": "DEC-1008",
+    "title": "Suspicious activity report",
+    "category": "Compliance",
+    "ai_output": "File a Suspicious Activity Report: structured cash deposits across 4 branches.",
+    "confidence": 0.82,
+    "risk_level": "critical",
+    "context": {
+      "account_ref": "ACC-55102",
+      "deposits_30d": 9,
+      "deposit_range": "$8,200 - $9,800",
+      "customer_occupation": "Restaurant owner",
+      "model": "aml-monitor-v3.0"
+    },
+    "submitted_hours_ago": 12
+  },
+  {
+    "id": "DEC-1009",
+    "title": "Essay flagged as AI-generated",
+    "category": "Education",
+    "ai_output": "Flag essay as likely AI-generated and recommend an academic integrity referral.",
+    "confidence": 0.61,
+    "risk_level": "high",
+    "context": {
+      "detector_score": 0.61,
+      "student_note": "Self-reported non-native English speaker",
+      "draft_history_available": true,
+      "model": "ai-text-detector-v2.2"
+    },
+    "submitted_hours_ago": 20
+  },
+  {
+    "id": "DEC-1010",
+    "title": "Credit limit increase",
+    "category": "Credit",
+    "ai_output": "Approve credit limit increase from $5,000 to $8,000.",
+    "confidence": 0.88,
+    "risk_level": "medium",
+    "context": {
+      "account_age_years": 4,
+      "on_time_payments": "47 of 48",
+      "current_utilization": "31%",
+      "model": "credit-line-v2.5"
+    },
+    "submitted_hours_ago": 3
+  },
+  {
+    "id": "DEC-1011",
+    "title": "Marketplace seller suspension",
+    "category": "Fraud",
+    "ai_output": "Suspend seller account pending identity verification.",
+    "confidence": null,
+    "risk_level": "high",
+    "context": {
+      "seller_ref": "SELL-3092",
+      "triggered_rules": ["New account with high-value listings", "Payout address changed twice in 24h"],
+      "note": "Rule-based engine: no confidence score available",
+      "model": "seller-risk-rules-v8"
+    },
+    "submitted_hours_ago": 14
+  },
+  {
+    "id": "DEC-1012",
+    "title": "Auto-close inactive support ticket",
+    "category": "Customer support",
+    "ai_output": "Close ticket as resolved: no customer response for 7 days.",
+    "confidence": 0.91,
+    "risk_level": "low",
+    "context": {
+      "ticket_ref": "TCK-88120",
+      "last_agent_message": "Asked customer to confirm the fix worked",
+      "model": "support-agent-v1.3"
+    },
+    "submitted_hours_ago": 6
+  },
+  {
+    "id": "DEC-1013",
+    "title": "Identity verification",
+    "category": "Onboarding",
+    "ai_output": "Reject identity verification: face match score below threshold.",
+    "confidence": 0.55,
+    "risk_level": "high",
+    "context": {
+      "applicant_ref": "KYC-61044",
+      "face_match_score": 0.55,
+      "document_type": "Passport",
+      "image_quality": "Low light, slight blur",
+      "model": "kyc-vision-v1.6"
+    },
+    "submitted_hours_ago": 9
+  }
+]
